@@ -12,8 +12,7 @@ typedef struct {
   size_t match_len;
 } MatchedLine;
 
-MatchedLine create_matched_line(const char *line, size_t match_start,
-                                size_t match_end, size_t line_num);
+MatchedLine create_matched_line(const char *line, size_t match_start, size_t match_end, size_t line_num);
 
 typedef struct {
   char path[PATH_MAX];
