@@ -75,7 +75,7 @@ ExitStatus search_dir_recursively(const char *pattern, const char *base_path,
     if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
       continue;
 
-    char path[PATH_MAX];
+    char path[PATH_MAX_SIZE];
     snprintf(path, sizeof(path), "%s/%s", base_path, entry->d_name);
 
     if (is_dir(path)) {

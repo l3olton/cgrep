@@ -2,7 +2,7 @@
 #define SEARCH_RESULT_H
 
 #include <stddef.h>
-#include <limits.h>
+#include "file_utils.h"
 
 typedef struct {
   char *line;
@@ -15,7 +15,7 @@ typedef struct {
 MatchedLine create_matched_line(const char *line, size_t match_start, size_t match_end, size_t line_num);
 
 typedef struct {
-  char path[PATH_MAX];
+  char path[PATH_MAX_SIZE];
   MatchedLine *lines;
   size_t count;
   size_t capacity;
