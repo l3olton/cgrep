@@ -1,9 +1,6 @@
 name: test cgrep
 
 on:
-  push:
-    branches: [test]
-
   pull_request:
     branches: [master]
 
