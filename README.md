@@ -27,12 +27,16 @@ An optional flag can be passed, `--json`, that will format the output as json:
 `--json` - format output as json
 
 ## Development
-### Testing
-
-cd into the `e2e-test` directory and activate the python virtual environment
+### Build
+Run `build.sh` from the root of the project
 ```shell
-cd e2e-test
-source .venv/bin/activate
+sh build.sh
 ```
 
-Run the Python script containing 
+### Testing
+
+cd into the `test` directory and run `test.py`
+```shell
+cd test
+python3 test.py
+```
