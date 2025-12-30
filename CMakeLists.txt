@@ -24,5 +24,3 @@ target_sources(
   src/arg_parser.c
   src/csv_utils.c
 )
-
-target_include_directories(cgrep PRIVATE include)

@@ -10,3 +10,7 @@ void remove_newline_chars(char *str);
 int truncate_file(const char *path);
 
 #endif
+
+#ifndef PATH_MAX_SIZE
+#define PATH_MAX_SIZE 4096
+#endif

@@ -10,8 +10,7 @@
 #define MAX_LINE_SIZE (300 * sizeof(char))
 
 // TODO: evaluate usage of ExitStatus
-ExitStatus search_file(SearchResult *sr, const char *pattern,
-                         const char *path) {
+ExitStatus search_file(SearchResult *sr, const char *pattern, const char *path) {
   FILE *file = fopen(path, "r");
   if (file == NULL) {
     fprintf(stderr, "Error opening file %s\n", path);
@@ -76,7 +75,7 @@ ExitStatus search_dir_recursively(const char *pattern, const char *base_path,
     if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
       continue;
 
-    char path[PATH_MAX];
+    char path[PATH_MAX_SIZE];
     snprintf(path, sizeof(path), "%s/%s", base_path, entry->d_name);
 
     if (is_dir(path)) {
@@ -95,11 +94,11 @@ ExitStatus search(const char *pattern, const char *path, const OutputHandler out
   // TODO: user flag to override this
   const int MAX_DEPTH = 1000;
 
-  if (is_dir(path)) {
+  if (is_dir(path))
     return search_dir_recursively(pattern, path, output_handler, 0, MAX_DEPTH);
-  } else if (is_file(path)) {
+
+  if (is_file(path))
     return handle_search_file(pattern, path, output_handler);
-  }
 
   return SEARCH_SUCCESS;
 }

@@ -2,8 +2,8 @@
 
 A project for me to learn a bit about programming in C.
 
-### Usage
-```sh
+## Usage
+```shell
 cgrep [pattern] [optional path] [optional flags...]
 ```
 
@@ -25,3 +25,18 @@ An optional flag can be passed, `--json`, that will format the output as json:
 
 ### flags
 `--json` - format output as json
+
+## Development
+### Build
+Run `build.sh` from the root of the project
+```shell
+sh build.sh
+```
+
+### Testing
+
+cd into the `test` directory and run `test.py`
+```shell
+cd test
+python3 test.py
+```
